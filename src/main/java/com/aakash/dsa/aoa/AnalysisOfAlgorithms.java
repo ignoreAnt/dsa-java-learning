@@ -2,24 +2,32 @@ package com.aakash.dsa.aoa;
 
 public class AnalysisOfAlgorithms {
     public static void main(String[] args) {
+
         System.out.println(getSum(10));
         System.out.println(getSumV2(10));
         System.out.println(getSumV3(10));
+
     }
-    
-    private static int getSum(int n){
-        int sum = 0;
-        for (int i = 1; i <= n ; i++) {
-            sum = sum + i;
+
+    public static int getSum(int n){ // --> linear n --> number of operations will be directly proportional
+        int sum = 0; // constant
+        for (int i = 1; i <= n ; i++) { // i<= n --> n times , i++ --> n times
+            sum = sum + i; // n times
+        //            sum += i;
         }
+        // i <= n --> n times
+        // i++ --> n times
+        // sum = sum + i --> n times
+        // n + n + n = 3n computations steps
 
         return sum;
     }
 
-    private static int getSumV2(int n){
+    public static int getSumV2(int n){ // n2 --> Quadratic running time
         int sum = 0;
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= i ; j++) {
+//                sum = sum + 1
                 sum++; // 1 + (1 + 1) + (1 + 1 + 1)
             }
         }
@@ -27,7 +35,7 @@ public class AnalysisOfAlgorithms {
         return sum;
     }
 
-    private static int getSumV3(int n){
+    public static int getSumV3(int n){ // constant time
         return n * (n + 1)/2;
     }
 }
