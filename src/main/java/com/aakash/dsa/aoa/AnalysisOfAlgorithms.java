@@ -18,14 +18,14 @@ public class AnalysisOfAlgorithms {
         // i <= n --> n times
         // i++ --> n times
         // sum = sum + i --> n times
-        // n + n + n = 3n computations steps
+        // n + n + n - 2 = 3n - 2 computations steps
 
         return sum;
     }
 
     public static int getSumV2(int n){ // n2 --> Quadratic running time
         int sum = 0;
-        for (int i = 1; i <= n; i++) {
+        for (int i = 1; i <= n; i++) { // 1 + 2 (1 + 1) + 3 (1 + 1 + 1) =  n2/2 + n/2
             for (int j = 1; j <= i ; j++) {
 //                sum = sum + 1
                 sum++; // 1 + (1 + 1) + (1 + 1 + 1)

@@ -52,13 +52,43 @@ class SumArrayTest {
         System.out.println("Test2");
     }
 
-    @AfterAll
-    static void tearDown(){
-        System.out.println("Tear Down");
+    @Test
+    @DisplayName("When a array is given correct sum is returned")
+    void shouldReturnCorrectSum() {
+        // Arrange - Given
+        int[] nums = new int[]{1, 2, 3};
+        int expected = 6;
+
+        // Act - When
+        int actual = SumArray.sumv2(nums);
+
+        // Assert - Then
+        assertEquals(expected, actual);
+        System.out.println("Test3");
+    }
+
+    @Test
+    @DisplayName("When Array is empty sum is zero")
+    void shouldReturnZeroWhenArrayEmpty(){
+        // Arrange
+        int[] nums = new int[]{};
+        int expected = 0;
+
+        // Act
+        int actual = SumArray.sumv2(nums);
+
+        // Assert
+        assertEquals(expected, actual);
+        System.out.println("Test4");
     }
 
     @AfterEach
     void tearDownEach(){
         System.out.println("Teach Down Each");
+    }
+
+    @AfterAll
+    static void tearDown(){
+        System.out.println("Tear Down");
     }
 }

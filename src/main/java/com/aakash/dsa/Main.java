@@ -1,4 +1,4 @@
-package com.aakash.dsa.aoa;
+package com.aakash.dsa;
 
 public class Main {
     public static void main(String[] args) {
