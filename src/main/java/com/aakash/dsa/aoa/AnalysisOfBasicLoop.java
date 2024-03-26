@@ -11,8 +11,8 @@ public class AnalysisOfBasicLoop {
 //        constantLoop(11);
 //        constantIncrement(11);
 //        constantDecrement(10);
-        constantProduct(20);
-//        constantPower(1000);
+//        constantProduct(20);
+        constantPower(1_000_000);
 //        multipleLoops(10);
 //        nestedLoops(100);
 //        mixedLoops(10);
@@ -104,8 +104,9 @@ public class AnalysisOfBasicLoop {
 
     public static void constantPower(int n){
         int constant = 2;
+        int k = 0;
         for (int i = 2; i < n ; i = (int) Math.pow(i, constant)) {
-            System.out.println("constantPower"); //constant work/computation:  not dependent on input n
+            System.out.println("constantPower : " + ++k); //constant work/computation:  not dependent on input n
         }
 
         /**
@@ -125,6 +126,10 @@ public class AnalysisOfBasicLoop {
     }
 
     public static void multipleLoops(int n){
+        // search in array log(n) < n < n * log(n)
+        // sort first ==> O(nlogn)
+        // binary search ==> O(logn)
+        // O(n*log(n)) + O(log(n)) ==> O(n * log(n))
         for (int i = 0; i < n; i++) { // O(n)
             System.out.println("constant1"); //constant work/computation:  not dependent on input n
         }
@@ -178,7 +183,7 @@ public class AnalysisOfBasicLoop {
     }
 
     public static void differentInputs(int n, int m){
-        // Overall time complexity : O(n*log(n))
+        // Overall time complexity : O(n*log(m))
         for (int i = 0; i < n; i++) {
             for (int j = 1; j < m; j = j * 2) {
                 System.out.println("constant1");
@@ -194,7 +199,7 @@ public class AnalysisOfBasicLoop {
 
         // We can calculate the overall time complexity as
         // We can take the expression inside big-oh or Theta notation
-        // O(n*log(n) + m^2)
+        // O(n*log(m) + m^2)
 
         // Real world examples are :
         // Graph algorithms : O(e + v), where e is edges and v is vertices

@@ -18,7 +18,7 @@ public class AnalysisOfAlgorithms {
         // i <= n --> n times
         // i++ --> n times
         // sum = sum + i --> n times
-        // n + n + n - 2 = 3n - 2 computations steps
+        // n + n + n + 2 = 3n + 2 computations steps
 
         return sum;
     }
