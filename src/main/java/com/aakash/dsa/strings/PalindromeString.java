@@ -51,4 +51,10 @@ public class PalindromeString {
         chars[a] = chars[b];
         chars[b] = temp;
     }
+
+    public static <T> void swap(int a, int b, T[] chars){
+        T temp = chars[a];
+        chars[a] = chars[b];
+        chars[b] = temp;
+    }
 }
