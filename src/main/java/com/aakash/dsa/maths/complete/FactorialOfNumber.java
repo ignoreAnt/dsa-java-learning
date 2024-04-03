@@ -13,5 +13,7 @@ public class FactorialOfNumber {
         }
 
         return fact;
+        // TC : O(n)
+        // AS : O(1)
     }
 }
