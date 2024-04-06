@@ -1,19 +1,20 @@
 package com.aakash.dsa.maths.complete;
 
-import static com.aakash.dsa.maths.complete.PrimeNumber.isPrimev3;
+import static com.aakash.dsa.maths.complete.PrimeNumber.isPrimeV3;
+
 
 public class PrimeFactors {
     public static void main(String[] args) {
         primeFactors(12);
-        primeFactorsV2(450);
-        primeFactorsV2(84);
+//        primeFactorsV2(450);
+//        primeFactorsV2(84);
     }
 
     public static void primeFactors(int num){
         for (int i = 2; i < num; i++) { // O(n)
-            if (isPrimev3(i)){
+            if (isPrimeV3(i)){
                 int x = i;
-                while (num % x == 0){   // O(log(n))
+                while (num % i == 0){   // O(log(n))
                     System.out.print(i + ", ");
                     x = x * i;
                 }

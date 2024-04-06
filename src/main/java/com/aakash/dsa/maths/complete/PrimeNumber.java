@@ -2,7 +2,12 @@ package com.aakash.dsa.maths.complete;
 
 public class PrimeNumber {
     public static void main(String[] args) {
-
+        System.out.println(isPrime(29));
+        System.out.println(isPrimeV2(29));
+        System.out.println(isPrimeV3(997));
+        for (int i = 0; i < 1000; i++) {
+            System.out.println(i + "--> " + i/2 + " --> " + Math.sqrt(i));
+        }
     }
 
     public static boolean isPrime(int n){
@@ -18,6 +23,8 @@ public class PrimeNumber {
         return true;
         // TC : O(n)
         // AS : O(1)
+
+        // 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20..29
     }
 
     /**
@@ -34,7 +41,7 @@ public class PrimeNumber {
      * ==> x <= sqrt(n)
      */
 
-    public static boolean isPrimev2(int n){
+    public static boolean isPrimeV2(int n){
         if (n == 1){
             return false;
         }
@@ -55,7 +62,7 @@ public class PrimeNumber {
      * Idea : by checking for n % 2 == 0 and for checking n % 3 == 0 we save many iterations
      */
 
-    public static boolean isPrimev3(int n){
+    public static boolean isPrimeV3(int n){
         if (n == 1){
             return false;
         }
@@ -66,7 +73,9 @@ public class PrimeNumber {
         if (n % 2 == 0 || n % 3 == 0){
             return false;
         }
+        int k = 0;
         for (int i = 5; i * i < n; i = i + 6) {
+            System.out.println(++k);
             if (n % i == 0 || n % (i + 2) == 0){
                 return false;
             }
