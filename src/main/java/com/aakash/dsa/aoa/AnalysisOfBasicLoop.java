@@ -68,10 +68,13 @@ public class AnalysisOfBasicLoop {
         }
 
         /**
+         *
          *  n : user input
          *  c : constant
          *  loop runs ceil(log(n)) times ==> O(log(n))
          *
+         *  a^b = z
+         *  ==> b = log[a]z
          *  c^0, c^1, c^2, ....c^k-1
          *  If the loop run k times, then it will run from c^0 to c^k-1
          *  What the loop to k time :
