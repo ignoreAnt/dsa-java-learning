@@ -16,6 +16,7 @@ public class DecimalToBinary {
         int remainder;
         long currentPlace = 1; // Tracks the current place value in binary
 
+        // 11
         while (n > 0) {
             remainder = n % 2; // Get the remainder (0 or 1)
             n = n / 2; // Divide the number by 2

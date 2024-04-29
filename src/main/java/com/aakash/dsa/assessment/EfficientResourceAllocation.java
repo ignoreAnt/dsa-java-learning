@@ -10,10 +10,19 @@ public class EfficientResourceAllocation {
         int[] buyers = {60, 36, 48};
         int[] sellers = {20, 40, 90};
 
+        for (int i = 0; i < buyers.length; i++) {
+            for (int j = 0; j < sellers.length; j++) {
+                System.out.println(buyers[i] + ";" + sellers[j]);
+            }
+        }
+
         // Process the resource matching and allocation
         processResourceAllocation(buyers, sellers);
     }
     private static void processResourceAllocation(int[] buyers, int[] sellers) {
+        if (buyers == null || sellers == null){
+            return;
+        }
         // Match buyers and sellers and calculate GCD
         List<Transaction> transactions = new ArrayList<>();
         for (int buyer : buyers) {
