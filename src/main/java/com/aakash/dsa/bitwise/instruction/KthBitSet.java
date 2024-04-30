@@ -7,7 +7,7 @@ public class KthBitSet {
 
     public static boolean kthBitSet(int n, int k){
         while (k > 0){
-            n /= 2;
+            n = n / 2;
             k--;
         }
         int rightMostBit = n % 2;
