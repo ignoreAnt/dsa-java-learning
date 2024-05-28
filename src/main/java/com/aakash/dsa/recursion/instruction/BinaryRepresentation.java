@@ -13,6 +13,8 @@ public class BinaryRepresentation {
      * 001 ==> 1
      * 010 ==> 0 * 2^2 + 1 * 2^1 + 0* 2^0 ==> 2
      * 101 ==> 5
+     *
+     * 235 ==> 2 * 10^2 + 3 * 10^1 + 5 * 10^1 => 200 + 30 + 5 = 235
      */
     public static void fun(int n) {
         if(n == 0) {

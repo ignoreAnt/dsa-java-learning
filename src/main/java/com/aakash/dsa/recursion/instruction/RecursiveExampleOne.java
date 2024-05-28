@@ -15,7 +15,7 @@ public class RecursiveExampleOne {
             return;
         }
 
-        fun(n - 1);
+        fun(n - 1); // fun(3),
 
         System.out.println(n);
 
@@ -30,7 +30,7 @@ public class RecursiveExampleOne {
 
         System.out.println(n);
 
-        fun1(n - 1);
+        fun1(n - 1); // Tail Recursion
 
     }
 
@@ -54,11 +54,11 @@ public class RecursiveExampleOne {
             return;
         }
 
-        fun3(n - 1);  // fun(3),fun(2), fun(1)
+        fun3(n - 1);
 
-        System.out.println(n); // 1, 2, 1,
+        System.out.println(n);
 
-        fun3(n - 1); // fun(3),fun(2), fun(1)
+        fun3(n - 1);
 
 
     }

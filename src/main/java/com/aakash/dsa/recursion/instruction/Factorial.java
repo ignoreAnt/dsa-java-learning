@@ -6,12 +6,24 @@ public class Factorial {
         System.out.println(factTailRecursive(5, 1));
     }
 
+    // fact:
+    // if n = 0; n = 1 ; f(n) = 1
+    // else f(n) = n * f(n-1)
     public static int fact(int n){
         if (n == 0 || n == 1){
             return 1;
         }
 
         return n * fact(n - 1);
+        /*
+          5 * fact(4)
+                |
+                4 * fact(3)
+                       |
+                       3 * fact(2)
+                             |
+                             2 * fact(1)
+         */
     }
 
     public static int factTailRecursive(int n, int k){
