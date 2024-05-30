@@ -20,6 +20,17 @@ public class NthFibonacciNumber {
         return fib(n - 1) + fib(n - 2);
     }
 
+    /**
+     * fib(4)
+     *    |
+     *    fib(3)                        + fib(2)
+     *      |                                |
+     *      fib(2) + fib(1)             fib(1) + fib(0)
+     *        |
+     *        fib(1) + fib(0)
+     *
+     */
+
     public static long fibV2(int n){
         if (memoizationMap.containsKey(n)){
             return memoizationMap.get(n);
@@ -34,4 +45,6 @@ public class NthFibonacciNumber {
         return result;
 
     }
+
+
 }
