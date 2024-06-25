@@ -84,4 +84,21 @@ public class DynamicArray {
             arr = newArray;
         }
     }
+
+    public void removeElementAtLast(){
+        // TODO
+    }
+
+    public void removeElementAtIndex(int index){
+        // TODO
+    }
+
+    public int getValueAtIndex(int index){
+        // TODO
+        return 0;
+    }
+
+    public void updateValueAtIndex(int index, int element){
+        // TODO
+    }
 }
