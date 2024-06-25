@@ -1,6 +1,7 @@
 package com.aakash.dsa.recursion.instruction;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -76,6 +77,7 @@ import java.util.List;
 public class AllSubsets {
 
     public static void main(String[] args) {
+
         String s1 = "abc";
         System.out.println(s1.substring(0, s1.length() - 1));
         System.out.println(generateSubsets(s1)); // ["", "a", "b", "c", "ab", "ac", "bc", "abc"]
@@ -99,10 +101,11 @@ public class AllSubsets {
             result.add(current);
             return;
         }
-        // Exclude the current character
-        generateSubsetsHelper(s, index + 1, current, result);
+
         // Include the current character
         generateSubsetsHelper(s, index + 1, current + s.charAt(index), result);
+        // Exclude the current character
+        generateSubsetsHelper(s, index + 1, current, result);
     }
 
     private static void printSubSet(String str, String curr, int index) {
