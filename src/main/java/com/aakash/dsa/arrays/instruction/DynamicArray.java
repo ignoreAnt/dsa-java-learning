@@ -38,6 +38,7 @@ public class DynamicArray {
         dynamicArray.addElementAtIndex(6, 1);
         System.out.println(Arrays.toString(dynamicArray.arr));
         dynamicArray.addElementAtIndex(7, 0);
+        System.out.println(Arrays.toString(dynamicArray.arr));
 
     }
 
@@ -62,7 +63,7 @@ public class DynamicArray {
 
     public void addElementAtIndex(int element, int index){
         if(length < capacity){
-            for (int i = length; i >= index ; i--) {
+            for (int i = length - 1; i >= index ; i--) {
                 arr[i + 1] = arr[i];
             }
             arr[index] = element;
@@ -71,16 +72,23 @@ public class DynamicArray {
             // Case : where length == capacity
             int[] newArray = new int[2 * capacity];
 
-            for (int i = 0; i < arr.length; i++) {
+//            for (int i = 0; i < length; i++) {
+//                newArray[i] = arr[i];
+//            }
+//            for (int j = length - 1; j >= index ; j--) {
+//                newArray[j + 1] = newArray[j];
+//            }
+            for (int i = 0; i < index; i++) {
                 newArray[i] = arr[i];
             }
-            for (int j = length; j >= index ; j--) {
-                arr[j + 1] = arr[j];
+            newArray[index] = element;
+
+            for (int i = index + 1; i < length; i++) {
+                newArray[i] = arr[i - 1];
             }
 
-            newArray[index] = element;
-            this.capacity = capacity * 2;
-            this.length++;
+            capacity = capacity * 2;
+            length++;
             arr = newArray;
         }
     }
