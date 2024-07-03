@@ -513,6 +513,12 @@
                   </llm>
                 </llm>
               </chat>
+              <chat>
+                <internalId value="e357934b-ce7a-4594-be15-6f870f2b6341" />
+              </chat>
+              <chat>
+                <internalId value="27df700c-1132-4fc9-9e78-fe87b23d4096" />
+              </chat>
             </list>
           </chats>
           <defaultLlm>

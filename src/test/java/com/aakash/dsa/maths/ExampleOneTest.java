@@ -10,9 +10,9 @@ class ExampleOneTest {
 
     @ParameterizedTest
     @CsvSource({
-            "32, 32",
-            "-42, 42",
-            "0, 0",
+            "32, 32", // positive number
+            "-42, 42", // negative number
+            "0, 0", // zero
     })
     void shouldReturnCorrectAbsoluteValue(int input, int expected){
         // Arrange

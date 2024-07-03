@@ -3,7 +3,8 @@ package com.aakash.dsa.arrays.instruction;
 public class SecondLargestElement {
     public static void main(String[] args) {
 
-        int[] numbers = {1, 2, 1, 1, 1, 1, 1};  // 6
+//        int[] numbers = {1, 2, 1, 1, 1, 1, 1};  // 6
+        int[] numbers = {1};  // 6
         int[] numbers1 = {1, 1, 1, 1, 1, 1, 1}; // 5
 
         System.out.println(secondMax(numbers));
@@ -49,7 +50,7 @@ public class SecondLargestElement {
         int max = arr[0];
         int secondMax = arr[0];
         for (int i = 0; i < arr.length; i++) {
-            if (max > arr[i]){
+            if (max < arr[i]){
                 secondMax = max;
                 max = arr[i];
             }else if (secondMax < arr[i] && arr[i] < max){
