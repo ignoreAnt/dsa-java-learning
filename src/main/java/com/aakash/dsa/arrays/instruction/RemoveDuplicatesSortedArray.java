@@ -1,12 +1,8 @@
 package com.aakash.dsa.arrays.instruction;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
-import java.util.Map;
 import java.util.Set;
-import java.util.TreeSet;
 
 public class RemoveDuplicatesSortedArray {
     public static void main(String[] args) {
@@ -23,6 +19,7 @@ public class RemoveDuplicatesSortedArray {
 
         int[] nums = {10, 20, 20, 30, 30, 30};
         System.out.println(removeDuplicates(nums));
+        System.out.println(removeDuplicatesV3(nums));
     }
 
     public static DuplicatesRemoved removeDuplicates(int[] arr){
@@ -66,6 +63,8 @@ public class RemoveDuplicatesSortedArray {
 
     }
 
+
+
     public static class DuplicatesRemoved{
         private int[] arr;
         private int size;
@@ -82,5 +81,49 @@ public class RemoveDuplicatesSortedArray {
                     ", size=" + size +
                     '}';
         }
+    }
+
+
+    /*
+        arr = {10, 10, 20, 20, 20, 30, 30, 30}
+        arr = {10, 20, 20, 20, 20, 30, 30, 30}
+        arr = {10, 20, 30, 20, 20, 30, 30, 30}
+
+
+
+
+
+
+        Follow the steps mentioned below to implement the idea:
+
+        Traverse input array from i = 0 to length:
+        Keep track of the count of unique elements. Let this count be j.
+                 Swap arr[j] with arr[i].
+        At last, return j.
+     */
+
+    public static DuplicatesRemoved removeDuplicatesV3(int[] arr)
+    {
+        if (arr == null){
+            throw new IllegalArgumentException("Array is null");
+        }
+
+        if (arr.length == 0 || arr.length == 1) {
+            return new DuplicatesRemoved(arr, arr.length);
+        }
+
+        // To store index of next unique element
+        int count = 0;
+
+        // If current element is not equal to next
+        // element then store that current element
+        for (int i = 0; i < arr.length - 1; i++)
+            if (arr[i] != arr[i + 1]) {
+                arr[count++] = arr[i];
+            }
+
+        arr[count++] = arr[arr.length - 1];
+
+        return new DuplicatesRemoved(arr, count);
     }
 }
