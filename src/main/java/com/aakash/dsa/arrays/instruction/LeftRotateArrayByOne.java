@@ -19,5 +19,7 @@ public class LeftRotateArrayByOne {
             arr[i - 1] = arr[i];
         }
         arr[arr.length - 1] = temp;
+        // TC : O(n)
+        // AS : O(1)
     }
 }
