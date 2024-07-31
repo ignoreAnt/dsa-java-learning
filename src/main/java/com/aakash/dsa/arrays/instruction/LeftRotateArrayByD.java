@@ -14,11 +14,18 @@ public class LeftRotateArrayByD {
         System.out.println(Arrays.toString(nums));
 
     }
-
+    /*
+        {1, 2, 3, 4, 5}; d = 3
+        {2, 3, 4, 5, 1}
+        {3, 4, 5, 1, 2}
+        {4, 5, 1, 2, 3}
+     */
     public static void leftRotateArrayByD(int[] arr, int d){
         for (int i = 0; i < d; i++) {
             leftRotateArrayByOne(arr);
         }
+        // TC : O(n * d)
+        // AS : O(1)
     }
 
     public static void leftRotateArrayByOne(int[] arr){
@@ -34,6 +41,12 @@ public class LeftRotateArrayByD {
         arr[arr.length - 1] = temp;
     }
 
+    /*
+        {1, 2, 3, 4, 5}; d = 3
+        temp = {1, 2, 3}
+        {4, 5, 3, 4, 5}
+        {4, 5, 1, 2, 3}
+     */
     public static void leftRotateArrayByDv2(int[] arr, int d){
         int[] temp = new int[d];
 
@@ -48,12 +61,25 @@ public class LeftRotateArrayByD {
         for (int i = 0; i < temp.length; i++){
             arr[arr.length - d + i] = temp[i];
         }
+
+        // TC : O(d + n)
+        // AS : O(d)
     }
 
+
+    /*
+        {1, 2, 3, 4, 5}; d = 3
+        {3, 2, 1, 4, 5}
+        {3, 2, 1, 5, 4}
+        {4, 5, 1, 2, 3}
+     */
     public static void leftRotateArrayByDv3(int[] arr, int d){
         reverse(arr, 0, d - 1);
         reverse(arr, d, arr.length - 1);
         reverse(arr, 0, arr.length - 1);
+
+        // TC : O(d/2 + n/2 - d/2 + n/2) ==> O(n)
+        // AS : O(1)
     }
 
     public static void reverse(int[] arr, int low, int high){
