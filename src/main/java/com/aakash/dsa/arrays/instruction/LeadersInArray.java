@@ -8,6 +8,9 @@ public class LeadersInArray {
         leadersV2(arr);
     }
 
+    // Algorithm : Fix an element and check if all the elements on the right are less than it,
+    // if yes : print it
+    // if no : move to next element
     public static void leaders(int[] arr){
         for (int i = 0; i < arr.length; i++) {
             boolean flag = false;
@@ -21,8 +24,20 @@ public class LeadersInArray {
                 System.out.print(arr[i] + " ");
             }
         }
+
+        // TC : O(n^2)
+        // AS : O(1)
     }
 
+    // Algorithm :
+    /*
+        1. Start traversing the array from left
+        2. Assign right most element as  current leader, as rightmost element is always leader
+        3. Traverse from n - 2 to index 0
+            check if the current element is greater than current leader
+            if yes : update current leader and print it.
+            if no : ignore and continue
+     */
     public static void leadersV2(int[] arr){
         int currentLeader = arr[arr.length - 1];
         System.out.print(currentLeader + " ");
