@@ -31,7 +31,7 @@ public class LeadersInArray {
 
     // Algorithm :
     /*
-        1. Start traversing the array from left
+        1. Start traversing the array from right to left
         2. Assign right most element as  current leader, as rightmost element is always leader
         3. Traverse from n - 2 to index 0
             check if the current element is greater than current leader
@@ -41,7 +41,7 @@ public class LeadersInArray {
     public static void leadersV2(int[] arr){
         int currentLeader = arr[arr.length - 1];
         System.out.print(currentLeader + " ");
-        for (int i = arr.length - 1; i >= 0 ; i--) {
+        for (int i = arr.length - 2; i >= 0 ; i--) {
             if (currentLeader < arr[i]){
                 currentLeader = arr[i];
                 System.out.print(currentLeader + " ");
