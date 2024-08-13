@@ -25,21 +25,28 @@ public class Max1sSequence {
         int[] nums = {1, 1, 0, 1, 1, 1};
         int[] nums1 = {1};
         int[] nums2 = {1, 0, 1, 1, 0, 1};
-        int max1Sequence = findMaxSequenceOfOne(nums);
-        System.out.println("Num Array is "+ Arrays.toString(nums)+ ":: "+"max1Sequence is " + max1Sequence);
-         max1Sequence = findMaxSequenceOfOne(nums1);
-        System.out.println("Num Array is "+ Arrays.toString(nums1)+ ":: "+"max1Sequence is " + max1Sequence);
-         max1Sequence = findMaxSequenceOfOne(nums2);
-        System.out.println("Num Array is "+ Arrays.toString(nums2)+ ":: "+"max1Sequence is " + max1Sequence);
-        max1Sequence = findMaxSequenceOfOne(new int[0]);
-        System.out.println("Num Array is "+ Arrays.toString(nums2)+ ":: "+"max1Sequence is " + max1Sequence);
+        int max1Sequence = findMaxSequenceOfOneV1(nums);
+        System.out.println("Num Array is " + Arrays.toString(nums) + ":: " + "max1Sequence is " + max1Sequence);
+        max1Sequence = findMaxSequenceOfOneV1(nums1);
+        System.out.println("Num Array is " + Arrays.toString(nums1) + ":: " + "max1Sequence is " + max1Sequence);
+        max1Sequence = findMaxSequenceOfOneV1(nums2);
+        System.out.println("Num Array is " + Arrays.toString(nums2) + ":: " + "max1Sequence is " + max1Sequence);
+        max1Sequence = findMaxSequenceOfOneV1(new int[0]);
+        System.out.println("Num Array is " + Arrays.toString(nums2) + ":: " + "max1Sequence is " + max1Sequence);
 
+
+        max1Sequence = findMaxSequenceOfOneV2(nums1);
+        System.out.println("Num Array is " + Arrays.toString(nums) + ":: " + "max1Sequence is " + max1Sequence);
+        System.out.println("Num Array is " + Arrays.toString(nums) + ":: " + "max1Sequence is " + max1Sequence);
+        max1Sequence = findMaxSequenceOfOneV2(nums1);
+        System.out.println("Num Array is " + Arrays.toString(nums1) + ":: " + "max1Sequence is " + max1Sequence);
+        max1Sequence = findMaxSequenceOfOneV2(nums2);
+        System.out.println("Num Array is " + Arrays.toString(nums2) + ":: " + "max1Sequence is " + max1Sequence);
+        max1Sequence = findMaxSequenceOfOneV2(new int[0]);
+        System.out.println("Num Array is " + Arrays.toString(nums2) + ":: " + "max1Sequence is " + max1Sequence);
     }
-
-    private static int findMaxSequenceOfOne(int[] nums) {
-        if (nums == null || nums.length == 0)
-            throw new IllegalArgumentException("Invalid Array");
-
+    private static int findMaxSequenceOfOneV1(int[] nums) {
+        if (nums == null || nums.length == 0) throw new IllegalArgumentException("Invalid Array");
         int currentCountofOne = 0, result = 0;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == 1) {
@@ -51,11 +58,32 @@ public class Max1sSequence {
                 currentCountofOne = 0;
             }
         }
+
         if (currentCountofOne > result) {
             result = currentCountofOne;
         }
 
         return result;
     }
+    private static int findMaxSequenceOfOneV2(int[] nums) {
+        if (nums == null || nums.length == 0) throw new IllegalArgumentException("Invalid Array");
+        int currentCountofOne = 0, result = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 1) {
+                currentCountofOne++;
+                if (currentCountofOne > result) {
+                    result = currentCountofOne;
+                }
+            } else currentCountofOne = 0;
+        }
+
+        if (currentCountofOne > result) {
+            result = currentCountofOne;
+        }
+
+        return result;
+    }
+
+
 
 }
