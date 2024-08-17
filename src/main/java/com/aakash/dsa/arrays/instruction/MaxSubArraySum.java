@@ -12,12 +12,12 @@ public class MaxSubArraySum {
         int maxSum = 0;
 
         for (int start = 0; start < arr.length; start++) {
+            int currentSum = 0;
             for (int end = start; end < arr.length; end++) {
-                int currentSum = 0;
-                for (int i = start; i <= end; i++) {
-                    currentSum += arr[i];
+//                for (int i = start; i <= end; i++) {
+                currentSum += arr[end];
 //                    System.out.print(arr[i] + " ");
-                }
+//                }
                 maxSum = Math.max(maxSum, currentSum);
 //              System.out.println();
             }
@@ -27,14 +27,17 @@ public class MaxSubArraySum {
     }
 
     public static int maxSubArraySumV2(int[] arr){
-        int result = arr[0];
+        int maxSoFar = arr[0];
         int maxEnding = arr[0];
 
         for (int i = 0; i < arr.length; i++) {
             maxEnding = Math.max(arr[i], maxEnding + arr[i]);
-            result = Math.max(result, maxEnding);
+            maxSoFar = Math.max(maxSoFar, maxEnding);
         }
 
-        return result;
+        return maxSoFar;
+
+        // TC : O(n)
+        // AS : O(1)
     }
 }
