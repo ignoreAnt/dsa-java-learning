@@ -34,8 +34,8 @@ public class MaxSumOfKConsecutiveElements {
         }
 
         maxSum = Math.max(currentSum, maxSum);
-        for (int i = 1; i < arr.length - k; i++) {
-            currentSum = currentSum + arr[i + k] - arr[i - 1];
+        for (int i = 1; i <= arr.length - k; i++) {
+            currentSum = currentSum + arr[i + k - 1] - arr[i - 1];
             maxSum = Math.max(currentSum, maxSum);
         }
 
