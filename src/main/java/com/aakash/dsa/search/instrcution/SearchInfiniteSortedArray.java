@@ -19,6 +19,8 @@ public class SearchInfiniteSortedArray {
 
             i++;
         }
+        // TC : O(n)
+        // AS : O(1)
     }
 
     public static int searchV2(int[] nums, int target){
@@ -32,5 +34,7 @@ public class SearchInfiniteSortedArray {
         }
 
         return BinarySearch.binarySearchRecursive(nums, target, start, end);
+        // TC : O(log*n)
+        // AS : O(1)
     }
 }

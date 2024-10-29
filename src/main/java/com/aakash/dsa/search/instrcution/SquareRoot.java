@@ -13,6 +13,7 @@ public class SquareRoot {
         System.out.println(squareRootV2(16));
         System.out.println(squareRootV2(25));
         System.out.println(squareRootV2(36));
+        System.out.println(Math.ceil(5.066));
     }
 
     private static int squareRoot(int number) {
@@ -21,6 +22,8 @@ public class SquareRoot {
             i++;
         }
         return i - 1;
+        // TC : O(n)
+        // AS : O(1)
     }
 
     private static int squareRootV2(int number) {
