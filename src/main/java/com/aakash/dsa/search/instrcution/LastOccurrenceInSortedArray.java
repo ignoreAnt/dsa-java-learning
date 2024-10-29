@@ -1,4 +1,4 @@
-package com.aakash.dsa.arrays.instruction;
+package com.aakash.dsa.search.instrcution;
 
 public class LastOccurrenceInSortedArray {
     public static void main(String[] args) {

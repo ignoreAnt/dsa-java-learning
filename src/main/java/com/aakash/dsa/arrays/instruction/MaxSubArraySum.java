@@ -1,9 +1,12 @@
 package com.aakash.dsa.arrays.instruction;
 
+import java.util.List;
+
 public class MaxSubArraySum {
     public static void main(String[] args) {
-        int[] nums = {2, 3, -8, 7 , -1, 2, 3};
+//        int[] nums = {2, 3, -8, 7 , -1, 2, 3};
 //        int[] nums = {1, 2, 3};
+        int[] nums = {1, 5, 9};
         System.out.println(maxSubArraySum(nums));
         System.out.println(maxSubArraySumV2(nums));
     }
@@ -29,15 +32,18 @@ public class MaxSubArraySum {
     public static int maxSubArraySumV2(int[] arr){
         int maxSoFar = arr[0];
         int maxEnding = arr[0];
+        int maxModulo = arr[0] % 2;
 
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 1; i < arr.length; i++) {
             maxEnding = Math.max(arr[i], maxEnding + arr[i]);
             maxSoFar = Math.max(maxSoFar, maxEnding);
+            maxModulo = Math.max(maxModulo, maxSoFar % 2);
         }
-
+        System.out.println(maxModulo);
         return maxSoFar;
 
         // TC : O(n)
         // AS : O(1)
     }
+
 }
