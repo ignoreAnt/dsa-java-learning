@@ -1,8 +1,8 @@
-package com.aakash.dsa.arrays.instruction;
+package com.aakash.dsa.search.instrcution;
 
 public class FirstOccurrenceOfInSortedArray {
     public static void main(String[] args) {
-        int[] arr = {10, 20, 20, 30, 30, 30, 40};
+        int[] arr = {10, 20, 20, 30, 30, 30, 30, 30, 40};
         System.out.println(firstOccurrenceV2(arr, 30));
         System.out.println(firstOccurrence(arr, 30));
     }
@@ -14,6 +14,8 @@ public class FirstOccurrenceOfInSortedArray {
             }
         }
         return  -1;
+        // TC : O(n)
+        // AS : O(1)
     }
 
     public static int firstOccurrenceV2(int[] arr, int target) {
@@ -35,5 +37,8 @@ public class FirstOccurrenceOfInSortedArray {
         }
 
         return -1;
+
+        // TC : O(log n)
+        // AS : O(1)
     }
 }

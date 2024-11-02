@@ -1,4 +1,4 @@
-package com.aakash.dsa.arrays.instruction;
+package com.aakash.dsa.search.instrcution;
 
 public class CountOccurrenceInSortedArray {
     public static void main(String[] args) {
@@ -8,12 +8,15 @@ public class CountOccurrenceInSortedArray {
     }
 
     private static int countOccurrenceV2(int[] arr, int target) {
-        int firstOccurrence = FirstOccurrenceOfInSortedArray.firstOccurrenceV2(arr, target);
-        int lastOccurrence = LastOccurrenceInSortedArray.lastOccurrenceV2(arr, target);
+        int firstOccurrence = FirstOccurrenceOfInSortedArray.firstOccurrenceV2(arr, target); //O(log n)
+        int lastOccurrence = LastOccurrenceInSortedArray.lastOccurrenceV2(arr, target); //O(log n)
         if (firstOccurrence == -1 || lastOccurrence == -1){
             return 0;
         }
         return lastOccurrence - firstOccurrence + 1;
+
+        // TC : O(log n) = O(log n) + O(log n) = O(2 * log(n))
+        // AS : O(1)
     }
 
     private static int countOccurrence(int[] arr, int target) {
@@ -24,5 +27,8 @@ public class CountOccurrenceInSortedArray {
             }
         }
         return count;
+
+        // TC : O(n)
+        // AS : O(1)
     }
 }
