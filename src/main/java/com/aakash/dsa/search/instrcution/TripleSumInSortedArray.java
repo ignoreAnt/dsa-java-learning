@@ -9,7 +9,7 @@ public class TripleSumInSortedArray {
     }
 
     private static boolean tripletWithSum(int[] arr, int x) {
-        for (int i = 0; i < arr.length - 3; i++) {
+        for (int i = 0; i < arr.length - 2; i++) {
             for (int j = i + 1; j < arr.length - 1; j++) {
                 for (int k = j + 1; k < arr.length; k++) {
                     if (arr[i] + arr[j] + arr[k] == x) {
@@ -20,6 +20,8 @@ public class TripleSumInSortedArray {
         }
 
         return false;
+        // TC : O(n^3)
+        // AS : O(1)
     }
 
     private static boolean tripletWithSumV2(int[] arr, int x) {
@@ -38,5 +40,7 @@ public class TripleSumInSortedArray {
         }
 
         return false;
+        // TC : O(n^2)
+        // AS : O(1)
     }
 }
