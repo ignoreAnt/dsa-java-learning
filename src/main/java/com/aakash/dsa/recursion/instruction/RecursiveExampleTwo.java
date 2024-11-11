@@ -2,13 +2,11 @@ package com.aakash.dsa.recursion.instruction;
 
 public class RecursiveExampleTwo {
 
-    public static void main(String [] args)
-    {
+    public static void main(String [] args) {
         fun(3);
     }
 
-    public static void fun(int n)
-    {
+    public static void fun(int n) {
         if(n == 0) {
             return;
         }
