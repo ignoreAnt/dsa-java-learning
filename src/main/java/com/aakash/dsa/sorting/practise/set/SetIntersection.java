@@ -22,13 +22,19 @@ public class SetIntersection {
     }
     private static int findLengthOfArray(int[] arr1, int[] arr2) {
         int len ;
-        if (arr1.length > arr2.length) {
-            len = arr1.length;
-        } else if (arr1.length < arr2.length) {
-            len = arr2.length;
-        } else {
-            len = arr1.length;
+        if(arr1!=null && arr2!= null) {
+            if (arr1.length > arr2.length) {
+                len = arr1.length;
+            } else if (arr1.length < arr2.length) {
+                len = arr2.length;
+            } else {
+                len = arr1.length;
+            }
         }
+       else
+           throw new IllegalArgumentException("Invalid Array");
+
+        if (len == 0) throw new IllegalArgumentException("Array is empty");
         return len;
     }
     private static void intersectionV1(int[] arr1, int[] arr2, int[] result) {
