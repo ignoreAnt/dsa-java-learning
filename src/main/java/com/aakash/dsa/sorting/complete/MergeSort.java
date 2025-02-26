@@ -39,7 +39,7 @@ public class MergeSort {
         while (i < leftArrayLength && j < rightArrayLength){
             if (leftArray[i] <= rightArray[j]){
                 arr[k++] = leftArray[i++];
-            }else {
+            }else if (leftArray[i] > rightArray[j]) {
                 arr[k++] = rightArray[j++];
             }
         }

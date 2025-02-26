@@ -55,7 +55,7 @@ public class NumberOfInversions {
         int count = 0;
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
-                if (arr[i] > arr[j]){
+                if (arr[i] > arr[j]) {
                     count++;
                 }
             }
@@ -63,4 +63,56 @@ public class NumberOfInversions {
 
         return count;
     }
+
+
+    public static int countInversionsV2(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return 0;
+        }
+        return mergeSortAndCount(arr, 0, arr.length - 1);
+    }
+
+    private static int mergeSortAndCount(int[] arr, int left, int right) {
+        if (left >= right) {
+            return 0;
+        }
+        int mid = left + (right - left) / 2;
+
+        // Count inversions in left and right halves
+        int count = mergeSortAndCount(arr, left, mid);
+        count += mergeSortAndCount(arr, mid + 1, right);
+
+        // Count split inversions and merge
+        count += mergeAndCount(arr, left, mid, right);
+        return count;
+    }
+
+    private static int mergeAndCount(int[] arr, int left, int mid, int right) {
+        int[] temp = new int[right - left + 1];
+        int i = left, j = mid + 1, k = 0, count = 0;
+
+        // Merge two sorted subarrays and count inversions
+        while (i <= mid && j <= right) {
+            if (arr[i] <= arr[j]) {
+                temp[k++] = arr[i++];
+            } else {
+                temp[k++] = arr[j++];
+                count += (mid - i + 1); // All remaining elements in left subarray are greater
+            }
+        }
+
+        // Copy remaining elements from both halves
+        while (i <= mid) {
+            temp[k++] = arr[i++];
+        }
+        while (j <= right) {
+            temp[k++] = arr[j++];
+        }
+
+        // Copy the merged array back into the original array
+        System.arraycopy(temp, 0, arr, left, temp.length);
+        return count;
+    }
 }
+
+
